@@ -1,0 +1,139 @@
+.portal-page {
+  padding: var(--spacing-xxl) 0;
+}
+
+.portal-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.login-container,
+.portal-features-container {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--box-shadow);
+}
+
+.login-container h2,
+.portal-features-container h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox {
+  margin-right: var(--spacing-xs);
+}
+
+.checkbox-label {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.forgot-password {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.register-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.portal-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.feature-card {
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  transition: transform var(--transition-speed) ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary-light);
+  border-radius: 50%;
+  margin-bottom: var(--spacing-md);
+}
+
+.feature-title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.feature-description {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 992px) {
+  .portal-container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .portal-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .portal-container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+}
