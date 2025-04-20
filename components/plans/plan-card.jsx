@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { Check, Award, Zap } from "lucide-react"
+import Link from "next/link";
+import { Award, Zap } from "lucide-react";
+import { formatCurrency } from "@/utils/currency"; // Import the utility function
 
 export default function PlanCard({ plan }) {
   return (
@@ -16,7 +17,7 @@ export default function PlanCard({ plan }) {
       </div>
 
       <div className="plan-price">
-        <span className="price-amount">${plan.price.toFixed(2)}</span>
+        <span className="price-amount">{formatCurrency(plan.price)}</span> {/* Format price here */}
         <span className="price-period">/month</span>
       </div>
 
@@ -29,7 +30,7 @@ export default function PlanCard({ plan }) {
       <ul className="plan-features">
         {plan.features.map((feature, index) => (
           <li key={index} className="feature-item">
-            <Check size={16} className="feature-check" /> {feature}
+            {feature}
           </li>
         ))}
       </ul>
@@ -41,5 +42,5 @@ export default function PlanCard({ plan }) {
         <button className="details-button">View Details</button>
       </div>
     </div>
-  )
+  );
 }

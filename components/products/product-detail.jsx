@@ -1,11 +1,17 @@
 'use client';
-import Image from "next/image"
-import { Check } from "lucide-react"
+import Image from "next/image";
+import { toast } from "react-hot-toast";
+import { useCart } from "@/context/cart-context";
+import { formatCurrency } from "@/utils/currency"; // Import the utility function
 
 export default function ProductDetail({ product }) {
+  const { addToCart } = useCart();
+
   const handleAddToCart = () => {
-    alert(`Added ${product.title} to cart!`) // Replace with actual cart logic
-  }
+    addToCart(product); // Add the product to the cart
+    toast.success(`${product.title} added to cart!`);
+  };
+
   return (
     <div id={product.id} className="product-card">
       {/* Product Image */}
@@ -13,9 +19,9 @@ export default function ProductDetail({ product }) {
         <Image
           src={product.image}
           alt={product.title}
-          width={300} // Set appropriate width
-          height={200} // Set appropriate height
-          layout="responsive" // Optional for responsive images
+          width={300}
+          height={200}
+          layout="responsive"
         />
       </div>
 
@@ -26,21 +32,20 @@ export default function ProductDetail({ product }) {
         <ul className="product-features">
           {product.features.map((feature, index) => (
             <li key={index} className="feature-item">
-              <Check size={18} className="feature-check" /> {feature}
+              {feature}
             </li>
           ))}
         </ul>
         <div className="product-pricing">
           <p className="price-from">
-            From <span className="price">${product.priceFrom.toFixed(2)}</span>
+            From <span className="price">{formatCurrency(product.priceFrom)}</span>
           </p>
         </div>
 
         <button className="add-to-cart-button" onClick={handleAddToCart}>
           Add to Cart
         </button>
-        
       </div>
     </div>
-  )
+  );
 }

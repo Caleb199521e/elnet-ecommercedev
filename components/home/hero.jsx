@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image"; // Import the Image component
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -19,8 +20,16 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero-image">
-        <div className="hero-image-container"></div>
+        <div className="hero-image-container">
+          <Image
+            src="/assets/diana-den-held-lFh71AehTt0-unsplash.jpg" // Path to the image in the public/assets folder
+            alt="Hero Image"
+            width={800} // Set the width of the image
+            height={500} // Set the height of the image
+            priority // Ensures the image is loaded quickly
+          />
+        </div>
       </div>
     </section>
-  )
+  );
 }

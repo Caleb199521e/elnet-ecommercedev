@@ -1,0 +1,123 @@
+.cart-page {
+  padding: var(--spacing-xxl);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.cart-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-lg);
+}
+
+.cart-table th,
+.cart-table td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-table th {
+  background-color: var(--color-background-light);
+  font-weight: bold;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-background);
+}
+
+.cart-item-image {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.item-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.item-price,
+.item-quantity {
+  font-size: 1rem;
+  color: var(--color-text-light);
+}
+
+.remove-button {
+  background-color: var(--color-danger);
+  color: red;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: var(--color-danger-dark);
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.total-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.checkout-button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+}

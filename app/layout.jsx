@@ -1,3 +1,5 @@
+import { Toaster } from "react-hot-toast";
+import { CartProvider } from "@/context/cart-context";
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import "@/styles/globals.css"
@@ -22,7 +24,8 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Header />
-        {children}
+        <Toaster position="top-right" reverseOrder={false} />
+        <CartProvider>{children}</CartProvider>
         <Footer />
       </body>
     </html>

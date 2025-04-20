@@ -1,8 +1,12 @@
-import Link from "next/link"
-import { Menu } from "lucide-react"
-import "@/styles/header.css"
+'use client';
+import Link from "next/link";
+import { Menu, ShoppingCart } from "lucide-react";
+import "@/styles/header.css";
+import { useState } from "react";
 
 export default function Header() {
+  const [cartCount, setCartCount] = useState(0); // State to track cart items
+
   return (
     <header className="site-header">
       <div className="header-container">
@@ -48,6 +52,8 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
+          
+
           <Link href="/portal" className="portal-link">
             Customer Portal
           </Link>
@@ -57,8 +63,16 @@ export default function Header() {
           <button className="mobile-menu-toggle" aria-label="Toggle menu">
             <Menu size={24} />
           </button>
+
+          {/* Cart Icon with Counter */}
+          <div className="cart-container">
+            <Link href="/cart" className="cart-link">
+              <ShoppingCart size={24} />
+              {cartCount > 0 && <span className="cart-counter">{cartCount}</span>}
+            </Link>
+          </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

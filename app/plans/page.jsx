@@ -1,7 +1,8 @@
-import PageHeader from "@/components/shared/page-header"
-import PlanFilters from "@/components/plans/plan-filters"
-import PlanCard from "@/components/plans/plan-card"
-import "@/styles/plans.css"
+import PageHeader from "@/components/shared/page-header";
+import PlanFilters from "@/components/plans/plan-filters";
+import PlanCard from "@/components/plans/plan-card";
+import { formatCurrency } from "@/utils/currency"; // Import the utility function
+import "@/styles/plans.css";
 
 export default function PlansPage() {
   const plans = [
@@ -10,7 +11,7 @@ export default function PlansPage() {
       name: "Basic",
       type: "home",
       speed: "100 Mbps",
-      price: 49.99,
+      price: formatCurrency(49.99), // Format price
       features: ["Unlimited data", "Free installation", "Wi-Fi router included", "24/7 customer support"],
       popular: false,
     },
@@ -19,7 +20,7 @@ export default function PlansPage() {
       name: "Standard",
       type: "home",
       speed: "500 Mbps",
-      price: 69.99,
+      price: formatCurrency(69.99), // Format price
       features: [
         "Unlimited data",
         "Free installation",
@@ -34,7 +35,7 @@ export default function PlansPage() {
       name: "Premium",
       type: "home",
       speed: "1 Gbps",
-      price: 89.99,
+      price: formatCurrency(89.99), // Format price
       features: [
         "Unlimited data",
         "Free installation",
@@ -50,7 +51,7 @@ export default function PlansPage() {
       name: "Business Starter",
       type: "business",
       speed: "500 Mbps",
-      price: 99.99,
+      price: formatCurrency(99.99), // Format price
       features: [
         "Unlimited data",
         "Free installation",
@@ -66,7 +67,7 @@ export default function PlansPage() {
       name: "Business Pro",
       type: "business",
       speed: "2 Gbps",
-      price: 149.99,
+      price: formatCurrency(149.99), // Format price
       features: [
         "Unlimited data",
         "Free installation",
@@ -78,7 +79,7 @@ export default function PlansPage() {
       ],
       popular: false,
     },
-  ]
+  ];
 
   return (
     <main className="plans-page">
@@ -92,5 +93,5 @@ export default function PlansPage() {
         ))}
       </section>
     </main>
-  )
+  );
 }
