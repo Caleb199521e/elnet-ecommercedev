@@ -1,7 +1,11 @@
+'use client';
 import Image from "next/image"
 import { Check } from "lucide-react"
 
 export default function ProductDetail({ product }) {
+  const handleAddToCart = () => {
+    alert(`Added ${product.title} to cart!`) // Replace with actual cart logic
+  }
   return (
     <div id={product.id} className="product-card">
       {/* Product Image */}
@@ -31,6 +35,11 @@ export default function ProductDetail({ product }) {
             From <span className="price">${product.priceFrom.toFixed(2)}</span>
           </p>
         </div>
+
+        <button className="add-to-cart-button" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
+        
       </div>
     </div>
   )

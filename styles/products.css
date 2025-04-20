@@ -105,3 +105,20 @@
 .product-content {
   padding: var(--spacing-lg);
 }
+
+.add-to-cart-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--color-primary-dark);
+}
