@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { Wifi, Radio, Phone, Home, Check } from "lucide-react"
+import Link from "next/link";
+import { Wifi, Radio, Phone, Home } from "lucide-react";
+import { formatCurrency } from "@/utils/currency"; // Import the utility function
 
 // Main component to display service details
 export default function ServiceDetail({ service }) {
@@ -7,17 +8,17 @@ export default function ServiceDetail({ service }) {
   const getIcon = (iconName) => {
     switch (iconName) {
       case "wifi":
-        return <Wifi size={40} /> // WiFi icon
+        return <Wifi size={40} />; // WiFi icon
       case "radio":
-        return <Radio size={40} /> // Radio icon
+        return <Radio size={40} />; // Radio icon
       case "phone":
-        return <Phone size={40} /> // Phone icon
+        return <Phone size={40} />; // Phone icon
       case "home":
-        return <Home size={40} /> // Home icon
+        return <Home size={40} />; // Home icon
       default:
-        return <Wifi size={40} /> // Default to WiFi icon
+        return <Wifi size={40} />; // Default to WiFi icon
     }
-  }
+  };
 
   return (
     <div id={service.id} className="service-detail">
@@ -34,7 +35,7 @@ export default function ServiceDetail({ service }) {
       <ul className="service-features">
         {service.features.map((feature, index) => (
           <li key={index} className="feature-item">
-            <Check size={18} className="feature-check" /> {feature}
+            {feature}
           </li>
         ))}
       </ul>
@@ -42,7 +43,7 @@ export default function ServiceDetail({ service }) {
       {/* Pricing information */}
       <div className="service-pricing">
         <p className="price-from">
-          From <span className="price">${service.priceFrom.toFixed(2)}</span>/month
+          From <span className="price">{formatCurrency(service.priceFrom)}</span>/month
         </p>
       </div>
 
@@ -53,5 +54,5 @@ export default function ServiceDetail({ service }) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
