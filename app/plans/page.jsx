@@ -11,7 +11,7 @@ export default function PlansPage() {
       name: "Basic",
       type: "home",
       speed: "100 Mbps",
-      price: formatCurrency(49.99), // Format price
+      price: 49.99, // Format price
       features: ["Unlimited data", "Free installation", "Wi-Fi router included", "24/7 customer support"],
       popular: false,
     },
@@ -20,7 +20,7 @@ export default function PlansPage() {
       name: "Standard",
       type: "home",
       speed: "500 Mbps",
-      price: formatCurrency(69.99), // Format price
+      price: 69.99, // Format price
       features: [
         "Unlimited data",
         "Free installation",
@@ -35,7 +35,7 @@ export default function PlansPage() {
       name: "Premium",
       type: "home",
       speed: "1 Gbps",
-      price: formatCurrency(89.99), // Format price
+      price: 89.99, // Format price
       features: [
         "Unlimited data",
         "Free installation",
@@ -51,7 +51,7 @@ export default function PlansPage() {
       name: "Business Starter",
       type: "business",
       speed: "500 Mbps",
-      price: formatCurrency(99.99), // Format price
+      price: 99.99, // Format price
       features: [
         "Unlimited data",
         "Free installation",
@@ -67,7 +67,7 @@ export default function PlansPage() {
       name: "Business Pro",
       type: "business",
       speed: "2 Gbps",
-      price: formatCurrency(149.99), // Format price
+      price: 149.99, // Format price
       features: [
         "Unlimited data",
         "Free installation",
